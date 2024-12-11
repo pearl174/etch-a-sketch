@@ -14,6 +14,7 @@ for (let i = 0; i < 4; i++) {
     container.appendChild(flexContainer);
 }
 
-function addColor() {
-    console.log("are things working?");
+function addColor(e) {
+    console.log(e.target);
+    e.target.classList.add("color");
 }
