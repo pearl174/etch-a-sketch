@@ -31,7 +31,14 @@ function deleteGrid() {
 // button logic
 const button = document.querySelector("button");
 button.addEventListener("click", () => {
-    const size = prompt("Number of squares per side: ");
+    let size = prompt("Number of squares per side: ");
+    while (size > 100 || size < 1) {
+        if (size > 100) {
+            size = prompt("Size cannot be larger than 100. Please try again");
+        } else if (size < 1) {
+            size = prompt("Size cannot be negative or zero");
+        }
+    }
     deleteGrid();
     createGrid(size);
 });
