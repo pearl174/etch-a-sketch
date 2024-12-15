@@ -9,6 +9,7 @@ function createGrid(gridSize) {
         for (let j = 0; j < gridSize; j++) {
             div = document.createElement("div");
             div.classList.add("cell");
+            div["opacity"] = 0;
             div.addEventListener("mouseover", addColor);
             flexContainer.appendChild(div);
         }
@@ -17,12 +18,13 @@ function createGrid(gridSize) {
 }
 
 function addColor(e) {
-    console.log(e.target);
     // e.target.classList.add("color");
     const red = Math.ceil(Math.random() * 255);
     const green = Math.ceil(Math.random() * 255);
     const blue = Math.ceil(Math.random() * 255);
     e.target.style.backgroundColor = `RGB(${red}, ${green}, ${blue})`;
+    e.target.style.opacity = e.target.opacity + 0.1;
+    e.target.opacity += 0.1;
 }
 
 function deleteGrid() {

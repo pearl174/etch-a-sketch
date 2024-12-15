@@ -8,6 +8,7 @@ body {
 .cell {
     border: 1px solid black;
     flex: 1;
+    opacity: 1;
 }
 #container {
     margin: auto;
