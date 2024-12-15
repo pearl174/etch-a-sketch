@@ -18,7 +18,11 @@ function createGrid(gridSize) {
 
 function addColor(e) {
     console.log(e.target);
-    e.target.classList.add("color");
+    // e.target.classList.add("color");
+    const red = Math.ceil(Math.random() * 255);
+    const green = Math.ceil(Math.random() * 255);
+    const blue = Math.ceil(Math.random() * 255);
+    e.target.style.backgroundColor = `RGB(${red}, ${green}, ${blue})`;
 }
 
 function deleteGrid() {
